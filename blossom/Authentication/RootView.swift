@@ -14,19 +14,18 @@ struct RootView: View {
         
         
         ZStack {
-            NavigationStack {
-                SettingsView(showSignInView: $showSignInView)
-            }
-        }
-        .onAppear {
-            let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
-            self.showSignInView = authUser == nil
-        }
-        .fullScreenCover(isPresented: $showSignInView){
-            NavigationStack {
-                AuthenticationView(showSignInView: $showSignInView)
-            }
-        }
+                   NavigationStack {
+                       if let _ = try? AuthenticationManager.shared.getAuthenticatedUser() {
+                           CatalogMain() // Show CatalogMain if user is authenticated
+                       } else {
+                           AuthenticationView(showSignInView: $showSignInView) // Show AuthenticationView if not signed in
+                       }
+                   }
+               }
+               .onAppear {
+                   let authUser = try? AuthenticationManager.shared.getAuthenticatedUser()
+                   self.showSignInView = authUser == nil
+               }
     }
 }
 

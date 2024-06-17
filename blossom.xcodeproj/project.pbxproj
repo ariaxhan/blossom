@@ -24,6 +24,16 @@
 		15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */; };
 		15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85252C200F7B0085ACE6 /* RootView.swift */; };
 		15DD85282C2011480085ACE6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85272C2011480085ACE6 /* SettingsView.swift */; };
+		15DD852B2C20CD180085ACE6 /* CatalogMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD852A2C20CD180085ACE6 /* CatalogMain.swift */; };
+		15DD852D2C20D0870085ACE6 /* Mindfulness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD852C2C20D0870085ACE6 /* Mindfulness.swift */; };
+		15DD852F2C20D3650085ACE6 /* Interpersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD852E2C20D3650085ACE6 /* Interpersonal.swift */; };
+		15DD85312C20D3710085ACE6 /* EmotionRegulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85302C20D3710085ACE6 /* EmotionRegulation.swift */; };
+		15DD85332C20D37D0085ACE6 /* SelfSoothing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85322C20D37D0085ACE6 /* SelfSoothing.swift */; };
+		15DD85352C20D3870085ACE6 /* ProblemSolving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85342C20D3870085ACE6 /* ProblemSolving.swift */; };
+		15DD85372C20D3900085ACE6 /* Existential.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85362C20D3900085ACE6 /* Existential.swift */; };
+		15DD853A2C20D5810085ACE6 /* WiseMindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85392C20D5810085ACE6 /* WiseMindView.swift */; };
+		15DD853C2C20D5890085ACE6 /* HowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD853B2C20D5890085ACE6 /* HowView.swift */; };
+		15DD853E2C20D5920085ACE6 /* WhatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD853D2C20D5920085ACE6 /* WhatView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +70,16 @@
 		15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		15DD85252C200F7B0085ACE6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		15DD85272C2011480085ACE6 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		15DD852A2C20CD180085ACE6 /* CatalogMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogMain.swift; sourceTree = "<group>"; };
+		15DD852C2C20D0870085ACE6 /* Mindfulness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mindfulness.swift; sourceTree = "<group>"; };
+		15DD852E2C20D3650085ACE6 /* Interpersonal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interpersonal.swift; sourceTree = "<group>"; };
+		15DD85302C20D3710085ACE6 /* EmotionRegulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionRegulation.swift; sourceTree = "<group>"; };
+		15DD85322C20D37D0085ACE6 /* SelfSoothing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfSoothing.swift; sourceTree = "<group>"; };
+		15DD85342C20D3870085ACE6 /* ProblemSolving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSolving.swift; sourceTree = "<group>"; };
+		15DD85362C20D3900085ACE6 /* Existential.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Existential.swift; sourceTree = "<group>"; };
+		15DD85392C20D5810085ACE6 /* WiseMindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiseMindView.swift; sourceTree = "<group>"; };
+		15DD853B2C20D5890085ACE6 /* HowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowView.swift; sourceTree = "<group>"; };
+		15DD853D2C20D5920085ACE6 /* WhatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +134,7 @@
 		15DD84E82C20070B0085ACE6 /* blossom */ = {
 			isa = PBXGroup;
 			children = (
+				15DD85292C20CCFE0085ACE6 /* Catalog */,
 				15DD851E2C20086D0085ACE6 /* Authentication */,
 				15DD84E92C20070B0085ACE6 /* blossomApp.swift */,
 				15DD84EB2C20070B0085ACE6 /* ContentView.swift */,
@@ -159,6 +180,31 @@
 				15DD85272C2011480085ACE6 /* SettingsView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		15DD85292C20CCFE0085ACE6 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				15DD852C2C20D0870085ACE6 /* Mindfulness.swift */,
+				15DD85382C20D55C0085ACE6 /* MindfulnessViews */,
+				15DD852A2C20CD180085ACE6 /* CatalogMain.swift */,
+				15DD852E2C20D3650085ACE6 /* Interpersonal.swift */,
+				15DD85302C20D3710085ACE6 /* EmotionRegulation.swift */,
+				15DD85322C20D37D0085ACE6 /* SelfSoothing.swift */,
+				15DD85342C20D3870085ACE6 /* ProblemSolving.swift */,
+				15DD85362C20D3900085ACE6 /* Existential.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		15DD85382C20D55C0085ACE6 /* MindfulnessViews */ = {
+			isa = PBXGroup;
+			children = (
+				15DD85392C20D5810085ACE6 /* WiseMindView.swift */,
+				15DD853B2C20D5890085ACE6 /* HowView.swift */,
+				15DD853D2C20D5920085ACE6 /* WhatView.swift */,
+			);
+			path = MindfulnessViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,12 +348,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				15DD85282C2011480085ACE6 /* SettingsView.swift in Sources */,
+				15DD853C2C20D5890085ACE6 /* HowView.swift in Sources */,
 				15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */,
 				15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */,
 				15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */,
+				15DD85372C20D3900085ACE6 /* Existential.swift in Sources */,
+				15DD852F2C20D3650085ACE6 /* Interpersonal.swift in Sources */,
+				15DD852B2C20CD180085ACE6 /* CatalogMain.swift in Sources */,
+				15DD85332C20D37D0085ACE6 /* SelfSoothing.swift in Sources */,
+				15DD852D2C20D0870085ACE6 /* Mindfulness.swift in Sources */,
+				15DD85352C20D3870085ACE6 /* ProblemSolving.swift in Sources */,
+				15DD853A2C20D5810085ACE6 /* WiseMindView.swift in Sources */,
+				15DD85312C20D3710085ACE6 /* EmotionRegulation.swift in Sources */,
 				15DD85202C2008960085ACE6 /* AuthenticationView.swift in Sources */,
 				15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */,
 				15DD85222C2009BD0085ACE6 /* SignInEmailView.swift in Sources */,
+				15DD853E2C20D5920085ACE6 /* WhatView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
