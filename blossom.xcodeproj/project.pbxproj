@@ -22,6 +22,7 @@
 		15DD85202C2008960085ACE6 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD851F2C2008960085ACE6 /* AuthenticationView.swift */; };
 		15DD85222C2009BD0085ACE6 /* SignInEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85212C2009BD0085ACE6 /* SignInEmailView.swift */; };
 		15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */; };
+		15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85252C200F7B0085ACE6 /* RootView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		15DD851F2C2008960085ACE6 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		15DD85212C2009BD0085ACE6 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		15DD85252C200F7B0085ACE6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				15DD851F2C2008960085ACE6 /* AuthenticationView.swift */,
 				15DD85212C2009BD0085ACE6 /* SignInEmailView.swift */,
 				15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */,
+				15DD85252C200F7B0085ACE6 /* RootView.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */,
 				15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */,
+				15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */,
 				15DD85202C2008960085ACE6 /* AuthenticationView.swift in Sources */,
 				15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */,
 				15DD85222C2009BD0085ACE6 /* SignInEmailView.swift in Sources */,
