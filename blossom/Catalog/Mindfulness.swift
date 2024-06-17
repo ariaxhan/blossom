@@ -26,14 +26,18 @@ struct Mindfulness: View {
                    VStack(spacing: 20) {
                        
                        VStack {
-                           // Wise Mind Image
-                           Image("wise_mind")
-                               .resizable()
-                               .scaledToFit()
-                               .cornerRadius(10)
-                           Text("Wise Mind")
-                               .font(.headline)
-                       }
+                                    // Wise Mind Image with NavigationLink
+                                               NavigationLink(destination: WiseMindView()) {
+                                                   VStack {
+                                                       Image("wise_mind")
+                                                           .resizable()
+                                                           .scaledToFit()
+                                                           .cornerRadius(10)
+                                                       Text("Wise Mind")
+                                                           .font(.headline)
+                                                   }
+                                               }
+                                           }
                        
                        // How Image
                        VStack {

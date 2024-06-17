@@ -67,17 +67,16 @@ struct WiseMindView: View {
                                Text("Start with small decisions and practice finding the wise mind approach. Over time, this practice will become more natural and can be applied to larger, more significant decisions.")
                                VStack {
                                    Spacer()
-                                   Button("Practice with AI") {
-                                             // Action when the button is tapped
-                                             // This is where you'd initiate the AI interaction, navigation, etc.
-                                         }
-                                         .padding()
-                                         .background(Color.blue)
-                                         .foregroundColor(.white)
-                                         .cornerRadius(10)
-                                   Spacer()
-                                     }
-                               .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                                      NavigationLink(destination: ChatView(initialPrompt: "Run through a practice scenario about wise mind").environmentObject(ChatViewModel())) {
+                                                          Text("Practice with AI")
+                                                              .padding()
+                                                              .background(Color.blue)
+                                                              .foregroundColor(.white)
+                                                              .cornerRadius(10)
+                                                      }
+                                                      Spacer()
+                                          }
+                                          .frame(maxWidth: .infinity, maxHeight: .infinity)
                                }
     
                            }
