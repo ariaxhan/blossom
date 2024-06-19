@@ -45,7 +45,7 @@ struct RelationShipBuildingView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ChatView(initialPrompt: "Practice relationship-building scenarios").environmentObject(ChatViewModel())) {
+                    NavigationLink(destination:  ContentView()) {
                         Text("Practice with AI")
                             .padding()
                             .background(Color.black)

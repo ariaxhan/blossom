@@ -88,7 +88,7 @@ struct HowView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ChatView(initialPrompt: "Run through a practice scenario about how skills").environmentObject(ChatViewModel())) {
+                    NavigationLink(destination:  ContentView()) {
                         Text("Practice with AI")
                             .padding()
                             .background(Color.black)

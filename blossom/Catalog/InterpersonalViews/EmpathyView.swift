@@ -48,7 +48,7 @@ struct EmpathyView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ChatView(initialPrompt: "Practice empathy-building scenarios").environmentObject(ChatViewModel())) {
+                    NavigationLink(destination:  ContentView()) {
                         Text("Practice with AI")
                             .padding()
                             .background(Color.black)

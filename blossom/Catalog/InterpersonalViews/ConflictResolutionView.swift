@@ -51,7 +51,7 @@ struct ConflictResolutionView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ChatView(initialPrompt: "Practice conflict resolution scenarios").environmentObject(ChatViewModel())) {
+                    NavigationLink(destination:  ContentView()) {
                         Text("Practice with AI")
                             .padding()
                             .background(Color.black)

@@ -103,7 +103,7 @@ struct WiseMindView: View {
                     
                     VStack {
                         Spacer()
-                        NavigationLink(destination: ChatView(initialPrompt: "Run through a practice scenario about wise mind").environmentObject(ChatViewModel())) {
+                        NavigationLink(destination:  ContentView()) {
                             Text("Practice with AI")
                                 .padding()
                                 .background(Color.black)
