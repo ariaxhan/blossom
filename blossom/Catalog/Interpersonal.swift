@@ -28,13 +28,13 @@ struct Interpersonal: View {
                     
                     VStack {
                         // Wise Mind Image with NavigationLink
-                        NavigationLink(destination: WiseMindView()) {
+                        NavigationLink(destination: CommunicationView()) {
                             VStack {
-                                Image("wise_mind")
+                                Image("communication")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
-                                Text("Wise Mind")
+                                Text("Communication")
                                     .font(.headline)
                                     .foregroundColor(.black)
                             }
@@ -43,13 +43,13 @@ struct Interpersonal: View {
                     
                     // How Image
                     VStack {
-                        NavigationLink(destination: HowView()) {
+                        NavigationLink(destination: RelationShipBuildingView()) {
                             VStack {
-                                Image("how")
+                                Image("relationshipbuilding")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
-                                Text("How")
+                                Text("Relationship Building")
                                     .font(.headline)
                                     .foregroundColor(.black)
                             }
@@ -58,13 +58,28 @@ struct Interpersonal: View {
                     
                     // What Image
                     VStack {
-                        NavigationLink(destination: WhatView()) {
+                        NavigationLink(destination: ConflictResolutionView()) {
                             VStack {
-                                Image("what")
+                                Image("conflictresolution")
                                     .resizable()
                                     .scaledToFit()
                                     .cornerRadius(10)
-                                Text("What")
+                                Text("Conflict Resolution")
+                                    .font(.headline)
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+                    
+                    // What Image
+                    VStack {
+                        NavigationLink(destination: EmpathyView()) {
+                            VStack {
+                                Image("empathy")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .cornerRadius(10)
+                                Text("Empathy")
                                     .font(.headline)
                                     .foregroundColor(.black)
                             }
