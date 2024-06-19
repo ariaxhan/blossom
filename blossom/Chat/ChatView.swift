@@ -20,10 +20,13 @@ struct ChatView: View {
     @State private var showErrorAlert = false
     @State private var errorMessage = ""
 
-    // Firebase setup
-    private let functions = Functions.functions(region: "us-west2") // Replace 'us-west2' with your region if different
-    private let projectId = "blossom-1205"
-
+    // Firestore setup
+    private let firestore = Firestore.firestore()
+    private let collectionName = "generate" // Firestore Collection Path
+    private let promptField = "prompt" // Prompt Field
+    private let responseField = "response" // Response Field
+    private let orderField = "createTime" // Order Field
+    
     var body: some View {
         VStack {
             // Chat Display
@@ -78,43 +81,51 @@ struct ChatView: View {
         let content = initialPrompt ?? userInput
         let message = ChatMessage(content: content, isUser: true)
         viewModel.messages.append(message)
-        
+
         if initialPrompt == nil {
             userInput = "" // Clear input field only if it's not the initial prompt
         }
 
-        Task {
-            do {
-                let data: [String: Any] = [
-                    "message": message.content,
-                    "model": "models/chat-bison@001",
-                    "temperature": 0.5,
-                    "projectId": projectId
-                ]
+        // Add document to Firestore
+        firestore.collection(collectionName).addDocument(data: [
+            promptField: message.content,
+            orderField: FieldValue.serverTimestamp()
+        ]) { error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    print("Error adding document: \(error)")
+                    errorMessage = "Failed to send message. Please try again."
+                    showErrorAlert = true
+                    isStreaming = false
+                }
+                return
+            }
 
-                let function = functions.httpsCallable("generateMessageStream")
-                let result = try await function.call(data)
-
-                if let responseStream = result.data as? [String: Any],
-                   let stream = responseStream["stream"] as? String {
-                    for responseChunk in stream.split(separator: "\n") {
-                        if let chunkData = responseChunk.data(using: .utf8),
-                           let json = try? JSONSerialization.jsonObject(with: chunkData) as? [String: Any],
-                           let text = json["text"] as? String {
+            // Listen for changes to the document
+            firestore.collection(collectionName)
+                .whereField(promptField, isEqualTo: message.content)
+                .order(by: orderField, descending: true)
+                .limit(to: 1)
+                .addSnapshotListener { querySnapshot, error in
+                    guard let snapshot = querySnapshot else {
+                        DispatchQueue.main.async {
+                            print("Error fetching document: \(error!)")
+                            errorMessage = "Failed to fetch response. Please try again."
+                            showErrorAlert = true
+                            isStreaming = false
+                        }
+                        return
+                    }
+                    if let document = snapshot.documents.first,
+                       let response = document.get(self.responseField) as? String {
+                        DispatchQueue.main.async {
                             if let lastIndex = viewModel.messages.lastIndex(of: message) {
-                                viewModel.messages[lastIndex].content += text
+                                viewModel.messages[lastIndex].content += response
                             }
+                            isStreaming = false
                         }
                     }
                 }
-
-                isStreaming = false
-            } catch {
-                print("Error generating message: \(error)")
-                errorMessage = "Failed to generate message. Please try again."
-                showErrorAlert = true
-                isStreaming = false
-            }
         }
     }
 }
