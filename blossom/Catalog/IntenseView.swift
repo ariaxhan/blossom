@@ -10,20 +10,14 @@ struct IntenseView: View {
                 VStack(alignment: .center, spacing: 10) {
                     Text("Intense Emotion Regulation")
                         .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
+                        .bold()
                         .padding(.top, 20)
                     
                     Text("Essential for surviving crises and enduring emotional pain without making it worse:")
                         .font(.body)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
                         .padding(.horizontal)
-                        .padding(.bottom, 20)
                 }
                 .frame(maxWidth: .infinity)
-                .background(Color.red)
-                .cornerRadius(15)
                 .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 20) {
