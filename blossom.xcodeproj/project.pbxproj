@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15464D842C22A0E000209273 /* ChatSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D832C22A0E000209273 /* ChatSetup.swift */; };
+		15464D862C22A1A800209273 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D852C22A1A700209273 /* ChatViewModel.swift */; };
+		15464D902C22ACB400209273 /* CommunicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D8F2C22ACB400209273 /* CommunicationView.swift */; };
+		15464D922C22ACC100209273 /* RelationShipBuildingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D912C22ACC100209273 /* RelationShipBuildingView.swift */; };
+		15464D942C22ACCF00209273 /* ConflictResolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D932C22ACCF00209273 /* ConflictResolutionView.swift */; };
+		15464D962C22ACDB00209273 /* EmpathyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464D952C22ACDB00209273 /* EmpathyView.swift */; };
 		15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84E92C20070B0085ACE6 /* blossomApp.swift */; };
 		15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84EB2C20070B0085ACE6 /* ContentView.swift */; };
 		15DD84EE2C20070D0085ACE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DD84ED2C20070D0085ACE6 /* Assets.xcassets */; };
@@ -63,6 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		15464D832C22A0E000209273 /* ChatSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSetup.swift; sourceTree = "<group>"; };
+		15464D852C22A1A700209273 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
+		15464D8F2C22ACB400209273 /* CommunicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationView.swift; sourceTree = "<group>"; };
+		15464D912C22ACC100209273 /* RelationShipBuildingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelationShipBuildingView.swift; sourceTree = "<group>"; };
+		15464D932C22ACCF00209273 /* ConflictResolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConflictResolutionView.swift; sourceTree = "<group>"; };
+		15464D952C22ACDB00209273 /* EmpathyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmpathyView.swift; sourceTree = "<group>"; };
 		15DD84E62C20070B0085ACE6 /* blossom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blossom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD84E92C20070B0085ACE6 /* blossomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blossomApp.swift; sourceTree = "<group>"; };
 		15DD84EB2C20070B0085ACE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,6 +141,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		15464D8E2C22ACA600209273 /* InterpersonalViews */ = {
+			isa = PBXGroup;
+			children = (
+				15464D8F2C22ACB400209273 /* CommunicationView.swift */,
+				15464D912C22ACC100209273 /* RelationShipBuildingView.swift */,
+				15464D932C22ACCF00209273 /* ConflictResolutionView.swift */,
+				15464D952C22ACDB00209273 /* EmpathyView.swift */,
+			);
+			path = InterpersonalViews;
+			sourceTree = "<group>";
+		};
 		15DD84DD2C20070B0085ACE6 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +229,7 @@
 		15DD85292C20CCFE0085ACE6 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				15464D8E2C22ACA600209273 /* InterpersonalViews */,
 				15DD852C2C20D0870085ACE6 /* Mindfulness.swift */,
 				15DD85382C20D55C0085ACE6 /* MindfulnessViews */,
 				15DD852A2C20CD180085ACE6 /* CatalogMain.swift */,
@@ -239,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				15DD85432C20E3BA0085ACE6 /* ChatView.swift */,
+				15464D832C22A0E000209273 /* ChatSetup.swift */,
+				15464D852C22A1A700209273 /* ChatViewModel.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -391,17 +417,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				15DD85282C2011480085ACE6 /* SettingsView.swift in Sources */,
+				15464D922C22ACC100209273 /* RelationShipBuildingView.swift in Sources */,
+				15464D862C22A1A800209273 /* ChatViewModel.swift in Sources */,
 				15DD853C2C20D5890085ACE6 /* HowView.swift in Sources */,
 				15DD85542C20ED130085ACE6 /* AppDelegate.swift in Sources */,
 				15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */,
 				15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */,
 				15DD85442C20E3BA0085ACE6 /* ChatView.swift in Sources */,
+				15464D902C22ACB400209273 /* CommunicationView.swift in Sources */,
+				15464D962C22ACDB00209273 /* EmpathyView.swift in Sources */,
 				15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */,
+				15464D842C22A0E000209273 /* ChatSetup.swift in Sources */,
 				15DD85372C20D3900085ACE6 /* Existential.swift in Sources */,
 				15DD852F2C20D3650085ACE6 /* Interpersonal.swift in Sources */,
 				15DD852B2C20CD180085ACE6 /* CatalogMain.swift in Sources */,
 				15DD85332C20D37D0085ACE6 /* SelfSoothing.swift in Sources */,
 				15DD852D2C20D0870085ACE6 /* Mindfulness.swift in Sources */,
+				15464D942C22ACCF00209273 /* ConflictResolutionView.swift in Sources */,
 				15DD85352C20D3870085ACE6 /* ProblemSolving.swift in Sources */,
 				15DD853A2C20D5810085ACE6 /* WiseMindView.swift in Sources */,
 				15DD85312C20D3710085ACE6 /* EmotionRegulation.swift in Sources */,

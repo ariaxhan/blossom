@@ -10,12 +10,12 @@ import Firebase
 @main
 struct blossomApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-    
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 RootView()
-                    .environmentObject(ChatViewModel())
+                    .environmentObject(ChatViewModel()) // Provide ChatViewModel to the environment
             }
         }
     }
