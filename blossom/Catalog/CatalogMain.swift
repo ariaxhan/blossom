@@ -14,7 +14,7 @@ struct CatalogMain: View {
            ("Interpersonal", "interpersonal", AnyView(Interpersonal())),
            ("Emotion Regulation", "emotionregulation", AnyView(EmotionRegulation())),
            ("Self-Soothing", "selfsoothing", AnyView(SelfSoothing())),
-           ("Problem Solving", "problemsolving", AnyView(ProblemSolving())),
+           ("Problem Solving", "problemsolving", AnyView(ProblemSolvingView())),
            ("Existential Reflections", "existential", AnyView(Existential()))
        ]
 

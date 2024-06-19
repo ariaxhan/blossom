@@ -20,6 +20,10 @@
 		15464DAE2C239F7800209273 /* HighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DAD2C239F7800209273 /* HighView.swift */; };
 		15464DB02C239F7F00209273 /* ModerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DAF2C239F7F00209273 /* ModerateView.swift */; };
 		15464DB22C239F9300209273 /* CalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DB12C239F9300209273 /* CalmView.swift */; };
+		15464DB62C23A42400209273 /* SelfReflectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DB52C23A42400209273 /* SelfReflectionView.swift */; };
+		15464DB82C23A43400209273 /* GestaltTwoChairView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DB72C23A43400209273 /* GestaltTwoChairView.swift */; };
+		15464DBA2C23A44100209273 /* FigureGroundAnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DB92C23A44100209273 /* FigureGroundAnalysisView.swift */; };
+		15464DBC2C23A44F00209273 /* RolePlayingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DBB2C23A44F00209273 /* RolePlayingView.swift */; };
 		15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84E92C20070B0085ACE6 /* blossomApp.swift */; };
 		15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84EB2C20070B0085ACE6 /* ContentView.swift */; };
 		15DD84EE2C20070D0085ACE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DD84ED2C20070D0085ACE6 /* Assets.xcassets */; };
@@ -86,6 +90,10 @@
 		15464DAD2C239F7800209273 /* HighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighView.swift; sourceTree = "<group>"; };
 		15464DAF2C239F7F00209273 /* ModerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModerateView.swift; sourceTree = "<group>"; };
 		15464DB12C239F9300209273 /* CalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmView.swift; sourceTree = "<group>"; };
+		15464DB52C23A42400209273 /* SelfReflectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfReflectionView.swift; sourceTree = "<group>"; };
+		15464DB72C23A43400209273 /* GestaltTwoChairView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestaltTwoChairView.swift; sourceTree = "<group>"; };
+		15464DB92C23A44100209273 /* FigureGroundAnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FigureGroundAnalysisView.swift; sourceTree = "<group>"; };
+		15464DBB2C23A44F00209273 /* RolePlayingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RolePlayingView.swift; sourceTree = "<group>"; };
 		15DD84E62C20070B0085ACE6 /* blossom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blossom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD84E92C20070B0085ACE6 /* blossomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blossomApp.swift; sourceTree = "<group>"; };
 		15DD84EB2C20070B0085ACE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,6 +168,17 @@
 				15464D952C22ACDB00209273 /* EmpathyView.swift */,
 			);
 			path = InterpersonalViews;
+			sourceTree = "<group>";
+		};
+		15464DB42C23A41300209273 /* ProblemSolvingViews */ = {
+			isa = PBXGroup;
+			children = (
+				15464DB52C23A42400209273 /* SelfReflectionView.swift */,
+				15464DB72C23A43400209273 /* GestaltTwoChairView.swift */,
+				15464DB92C23A44100209273 /* FigureGroundAnalysisView.swift */,
+				15464DBB2C23A44F00209273 /* RolePlayingView.swift */,
+			);
+			path = ProblemSolvingViews;
 			sourceTree = "<group>";
 		};
 		15DD84DD2C20070B0085ACE6 = {
@@ -237,6 +256,7 @@
 		15DD85292C20CCFE0085ACE6 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				15464DB42C23A41300209273 /* ProblemSolvingViews */,
 				15464DAB2C239EAD00209273 /* IntenseView.swift */,
 				15464DAF2C239F7F00209273 /* ModerateView.swift */,
 				15464DB12C239F9300209273 /* CalmView.swift */,
@@ -441,10 +461,12 @@
 				15464D902C22ACB400209273 /* CommunicationView.swift in Sources */,
 				15464DA22C23924000209273 /* ChatBubble.swift in Sources */,
 				15464DAC2C239EAD00209273 /* IntenseView.swift in Sources */,
+				15464DBA2C23A44100209273 /* FigureGroundAnalysisView.swift in Sources */,
 				15464D962C22ACDB00209273 /* EmpathyView.swift in Sources */,
 				15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */,
 				15DD85372C20D3900085ACE6 /* Existential.swift in Sources */,
 				15464DA42C23924D00209273 /* ChatBubbleShape.swift in Sources */,
+				15464DB62C23A42400209273 /* SelfReflectionView.swift in Sources */,
 				15DD852F2C20D3650085ACE6 /* Interpersonal.swift in Sources */,
 				15464DAE2C239F7800209273 /* HighView.swift in Sources */,
 				15DD852B2C20CD180085ACE6 /* CatalogMain.swift in Sources */,
@@ -461,6 +483,8 @@
 				15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */,
 				15DD85222C2009BD0085ACE6 /* SignInEmailView.swift in Sources */,
 				15DD853E2C20D5920085ACE6 /* WhatView.swift in Sources */,
+				15464DB82C23A43400209273 /* GestaltTwoChairView.swift in Sources */,
+				15464DBC2C23A44F00209273 /* RolePlayingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
