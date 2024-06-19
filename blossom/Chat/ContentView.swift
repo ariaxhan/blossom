@@ -12,7 +12,7 @@ struct ContentView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white.ignoresSafeArea())
+        .background(Color(.systemBackground).ignoresSafeArea())
         .onAppear {
             chatService.clearMessages() // Clear messages when the view appears
             chatService.fetchMessages() // Fetch new messages
@@ -24,9 +24,10 @@ struct ContentView: View {
             .font(.largeTitle)
             .fontWeight(.bold)
             .padding()
-            .foregroundColor(.black)
+            .foregroundColor(.primary)
             .frame(maxWidth: .infinity)
             .background(Color.blue.opacity(0.1))
+            .cornerRadius(10)
     }
     
     @ViewBuilder private func chatListView() -> some View {
@@ -37,7 +38,7 @@ struct ContentView: View {
                         .id(chatMessage.id)
                 }
             }
-            .onChange(of: chatService.messages) {
+            .onChange(of: chatService.messages) { _ in
                 guard let recentMessage = chatService.messages.last else { return }
                 DispatchQueue.main.async {
                     withAnimation {
@@ -46,21 +47,22 @@ struct ContentView: View {
                 }
             }
         }
-        .background(Color.white)
+        .background(Color(.systemBackground))
     }
     
     @ViewBuilder private func inputView() -> some View {
         HStack {
             TextField("Enter a message...", text: $textInput)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .foregroundColor(.black)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(10)
             Button(action: sendMessage) {
                 Image(systemName: "paperplane.fill")
                     .resizable()
-                    .frame(width: 20, height: 20)
-                    .foregroundColor(.gray)
+                    .frame(width: 24, height: 24)
                     .padding()
-                    .background(Color(UIColor.systemGray5))
+                    .background(Color.gray)
+                    .foregroundColor(.white)
                     .cornerRadius(10)
             }
         }
@@ -89,6 +91,7 @@ struct ContentView: View {
                 Spacer()
             }
         }
+        .padding(.horizontal)
     }
     
     private func sendMessage() {

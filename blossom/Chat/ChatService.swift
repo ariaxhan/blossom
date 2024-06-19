@@ -41,6 +41,7 @@ class ChatService: ObservableObject {
     
     func clearMessages() {
         messages.removeAll()
+        objectWillChange.send()
     }
     
     private func processMarkdown(_ text: String) -> String {

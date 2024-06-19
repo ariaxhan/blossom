@@ -16,6 +16,10 @@
 		15464DA42C23924D00209273 /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DA32C23924D00209273 /* ChatBubbleShape.swift */; };
 		15464DA62C23925900209273 /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DA52C23925900209273 /* ChatService.swift */; };
 		15464DA92C239C3E00209273 /* SwiftyMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 15464DA82C239C3E00209273 /* SwiftyMarkdown */; };
+		15464DAC2C239EAD00209273 /* IntenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DAB2C239EAD00209273 /* IntenseView.swift */; };
+		15464DAE2C239F7800209273 /* HighView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DAD2C239F7800209273 /* HighView.swift */; };
+		15464DB02C239F7F00209273 /* ModerateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DAF2C239F7F00209273 /* ModerateView.swift */; };
+		15464DB22C239F9300209273 /* CalmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15464DB12C239F9300209273 /* CalmView.swift */; };
 		15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84E92C20070B0085ACE6 /* blossomApp.swift */; };
 		15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84EB2C20070B0085ACE6 /* ContentView.swift */; };
 		15DD84EE2C20070D0085ACE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15DD84ED2C20070D0085ACE6 /* Assets.xcassets */; };
@@ -78,6 +82,10 @@
 		15464DA12C23923F00209273 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		15464DA32C23924D00209273 /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubbleShape.swift; sourceTree = "<group>"; };
 		15464DA52C23925900209273 /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
+		15464DAB2C239EAD00209273 /* IntenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntenseView.swift; sourceTree = "<group>"; };
+		15464DAD2C239F7800209273 /* HighView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighView.swift; sourceTree = "<group>"; };
+		15464DAF2C239F7F00209273 /* ModerateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModerateView.swift; sourceTree = "<group>"; };
+		15464DB12C239F9300209273 /* CalmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalmView.swift; sourceTree = "<group>"; };
 		15DD84E62C20070B0085ACE6 /* blossom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = blossom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD84E92C20070B0085ACE6 /* blossomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blossomApp.swift; sourceTree = "<group>"; };
 		15DD84EB2C20070B0085ACE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -229,12 +237,16 @@
 		15DD85292C20CCFE0085ACE6 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				15464DAB2C239EAD00209273 /* IntenseView.swift */,
+				15464DAF2C239F7F00209273 /* ModerateView.swift */,
+				15464DB12C239F9300209273 /* CalmView.swift */,
+				15464DAD2C239F7800209273 /* HighView.swift */,
+				15DD85302C20D3710085ACE6 /* EmotionRegulation.swift */,
 				15464D8E2C22ACA600209273 /* InterpersonalViews */,
 				15DD852C2C20D0870085ACE6 /* Mindfulness.swift */,
 				15DD85382C20D55C0085ACE6 /* MindfulnessViews */,
 				15DD852A2C20CD180085ACE6 /* CatalogMain.swift */,
 				15DD852E2C20D3650085ACE6 /* Interpersonal.swift */,
-				15DD85302C20D3710085ACE6 /* EmotionRegulation.swift */,
 				15DD85322C20D37D0085ACE6 /* SelfSoothing.swift */,
 				15DD85342C20D3870085ACE6 /* ProblemSolving.swift */,
 				15DD85362C20D3900085ACE6 /* Existential.swift */,
@@ -422,19 +434,23 @@
 			files = (
 				15DD85282C2011480085ACE6 /* SettingsView.swift in Sources */,
 				15464D922C22ACC100209273 /* RelationShipBuildingView.swift in Sources */,
+				15464DB22C239F9300209273 /* CalmView.swift in Sources */,
 				15DD853C2C20D5890085ACE6 /* HowView.swift in Sources */,
 				15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */,
 				15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */,
 				15464D902C22ACB400209273 /* CommunicationView.swift in Sources */,
 				15464DA22C23924000209273 /* ChatBubble.swift in Sources */,
+				15464DAC2C239EAD00209273 /* IntenseView.swift in Sources */,
 				15464D962C22ACDB00209273 /* EmpathyView.swift in Sources */,
 				15DD85262C200F7B0085ACE6 /* RootView.swift in Sources */,
 				15DD85372C20D3900085ACE6 /* Existential.swift in Sources */,
 				15464DA42C23924D00209273 /* ChatBubbleShape.swift in Sources */,
 				15DD852F2C20D3650085ACE6 /* Interpersonal.swift in Sources */,
+				15464DAE2C239F7800209273 /* HighView.swift in Sources */,
 				15DD852B2C20CD180085ACE6 /* CatalogMain.swift in Sources */,
 				15DD85332C20D37D0085ACE6 /* SelfSoothing.swift in Sources */,
 				15464DA02C23923800209273 /* Chat.swift in Sources */,
+				15464DB02C239F7F00209273 /* ModerateView.swift in Sources */,
 				15DD852D2C20D0870085ACE6 /* Mindfulness.swift in Sources */,
 				15464DA62C23925900209273 /* ChatService.swift in Sources */,
 				15464D942C22ACCF00209273 /* ConflictResolutionView.swift in Sources */,
