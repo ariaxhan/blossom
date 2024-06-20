@@ -5,49 +5,35 @@
 //  Created by Aria Han on 6/19/24.
 //
 
-
 import Foundation
-import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct ChatDocument: Codable {
-    let createTime: Timestamp
-    let prompt: String
-    let response: String?
-    let status: Status
+enum ChatState: String, Codable, Equatable {
+    case PENDING
+    case COMPLETED
+}
+
+struct Chat: Identifiable, Codable, Equatable {
+    @DocumentID var id: String?
+    var text: String
+    var isUser: Bool
+    var state: ChatState
     
-    struct Status: Codable {
-        let startTime: Timestamp?
-        let completeTime: Timestamp?
-        let updateTime: Timestamp
-        let state: String
-        let error: String?
-        
-        var chatState: ChatState {
-            return ChatState(rawValue: state) ?? .PROCESSING
-        }
+    static func == (lhs: Chat, rhs: Chat) -> Bool {
+        return lhs.id == rhs.id &&
+               lhs.text == rhs.text &&
+               lhs.isUser == rhs.isUser &&
+               lhs.state == rhs.state
     }
 }
 
-enum ChatState: String, Codable {
-    case COMPLETED
-    case ERROR
-    case PROCESSING
-}
-
-struct Chat: Hashable {
-    private(set) var id: UUID = .init()
-    var text: String?
-    var isUser: Bool
-    var state: ChatState = .PROCESSING
-    var message: String {
-        switch state {
-        case .COMPLETED:
-            return text ?? ""
-        case .ERROR:
-            return "Something went wrong. Please try again."
-        case .PROCESSING:
-            return "..."
-        }
+struct ChatDocument: Codable {
+    @DocumentID var id: String?
+    var prompt: String
+    var response: String?
+    var status: ChatStatus
+    
+    struct ChatStatus: Codable {
+        var chatState: ChatState
     }
 }

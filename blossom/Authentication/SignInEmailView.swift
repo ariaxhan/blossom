@@ -1,80 +1,65 @@
-//
-//  SignInEmailView.swift
-//  blossom
-//
-//  Created by Aria Han on 6/16/24.
-//
-
 import SwiftUI
 
 @MainActor
 final class SignInEmailViewModel: ObservableObject {
-    
     @Published var email = ""
     @Published var password = ""
-    
-    
+
     func signUp() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found.")
             return
         }
-        
         try await AuthenticationManager.shared.createUser(email: email, password: password)
-          
     }
-    
-    
+
     func signIn() async throws {
         guard !email.isEmpty, !password.isEmpty else {
             print("No email or password found.")
             return
         }
-        
         try await AuthenticationManager.shared.signInUser(email: email, password: password)
-          
     }
-    
 }
 
 struct SignInEmailView: View {
     @StateObject private var viewModel = SignInEmailViewModel()
     @Binding var showSignInView: Bool
+    @State private var errorMessage: String?
+
     var body: some View {
-        VStack {
+        VStack(spacing: 20) {
+            Image(systemName: "lock.shield")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 100, height: 100)
+                .foregroundColor(.blue)
+                .padding(.bottom, 20)
+            
             TextField("Email...", text: $viewModel.email)
                 .padding()
-                .background(Color.gray.opacity(0.4))
+                .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
+                .keyboardType(.emailAddress)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
             
             SecureField("Password...", text: $viewModel.password)
                 .padding()
-                .background(Color.gray.opacity(0.4))
+                .background(Color.gray.opacity(0.2))
                 .cornerRadius(10)
             
-            Button {
+            Button(action: {
                 Task {
                     do {
                         try await viewModel.signUp()
                         showSignInView = false
-                        return
                     } catch {
-                        print(error)
+                        errorMessage = error.localizedDescription
                     }
-                    
-                    do {
-                        try await viewModel.signIn()
-                        showSignInView = false
-                        return
-                    } catch {
-                        print(error)
-                    }
-                    
-                    
                 }
-            
-            } label: {
-                Text("Sign In")
+            }) {
+                Text("Sign Up")
                     .font(.headline)
                     .foregroundColor(.white)
                     .frame(height: 55)
@@ -83,11 +68,36 @@ struct SignInEmailView: View {
                     .cornerRadius(10)
             }
             
+            Button(action: {
+                Task {
+                    do {
+                        try await viewModel.signIn()
+                        showSignInView = false
+                    } catch {
+                        errorMessage = error.localizedDescription
+                    }
+                }
+            }) {
+                Text("Sign In")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.green)
+                    .cornerRadius(10)
+            }
+
+            if let errorMessage = errorMessage {
+                Text(errorMessage)
+                    .foregroundColor(.red)
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
+            
             Spacer()
         }
-        
         .padding()
-        .navigationTitle("Sign in with email")
+        .navigationTitle("Sign In with Email")
     }
 }
 

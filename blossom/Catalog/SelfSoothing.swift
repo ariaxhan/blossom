@@ -1,13 +1,14 @@
-//
-//  SelfSoothing.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
 import SwiftUI
 
 struct SelfSoothing: View {
+    private let skills = [
+        "Visual Soothing",
+        "Auditory Soothing",
+        "Olfactory Soothing",
+        "Tactile Soothing",
+        "Gustatory Soothing"
+    ]
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .center, spacing: 20) {
@@ -122,7 +123,7 @@ struct SelfSoothing: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(prompt: generatePrompt())) {
                         Text("Practice with AI")
                             .padding()
                             .background(Color.blue)
@@ -137,6 +138,11 @@ struct SelfSoothing: View {
         .padding()
         .background(Color(UIColor.systemGray6))
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    private func generatePrompt() -> String {
+        let skillList = skills.joined(separator: ", ")
+        return "Would you like to practice a specific skill from the following: \(skillList)?"
     }
 }
 

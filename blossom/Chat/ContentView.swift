@@ -3,6 +3,7 @@ import SwiftUI
 struct ContentView: View {
     @State private var textInput = ""
     @StateObject private var chatService = ChatService()
+    var prompt: String?
     
     var body: some View {
         VStack {
@@ -16,6 +17,9 @@ struct ContentView: View {
         .onAppear {
             chatService.clearMessages() // Clear messages when the view appears
             chatService.fetchMessages() // Fetch new messages
+            if let prompt = prompt {
+                chatService.sendMessage(prompt)
+            }
         }
     }
     
@@ -38,8 +42,8 @@ struct ContentView: View {
                         .id(chatMessage.id)
                 }
             }
-            .onChange(of: chatService.messages) { _ in
-                guard let recentMessage = chatService.messages.last else { return }
+            .onChange(of: chatService.messages) { oldMessages, newMessages in
+                guard let recentMessage = newMessages.last else { return }
                 DispatchQueue.main.async {
                     withAnimation {
                         proxy.scrollTo(recentMessage.id, anchor: .bottom)
@@ -59,7 +63,7 @@ struct ContentView: View {
             Button(action: sendMessage) {
                 Image(systemName: "paperplane.fill")
                     .resizable()
-                    .frame(width: 24, height: 24)
+                    .frame(width: 20, height: 20)
                     .padding()
                     .background(Color.gray)
                     .foregroundColor(.white)
@@ -73,7 +77,7 @@ struct ContentView: View {
         HStack {
             if chat.isUser {
                 Spacer()
-                Text(chat.message)
+                Text(chat.text)
                     .padding()
                     .background(Color.blue)
                     .cornerRadius(10)
@@ -81,7 +85,7 @@ struct ContentView: View {
                     .padding(.vertical, 4)
                     .padding(.leading, 40)
             } else {
-                Text(chat.message)
+                Text(chat.text)
                     .padding()
                     .background(Color.gray)
                     .cornerRadius(10)
@@ -100,6 +104,8 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView(prompt: "Would you like to practice a specific skill from the following: Visual Soothing, Auditory Soothing, Olfactory Soothing, Tactile Soothing, Gustatory Soothing?")
+    }
 }

@@ -1,10 +1,3 @@
-//
-//  AuthenticationView.swift
-//  blossom
-//
-//  Created by Aria Han on 6/16/24.
-//
-
 import SwiftUI
 
 @MainActor
@@ -14,6 +7,26 @@ struct AuthenticationView: View {
     
     var body: some View {
         VStack {
+            Spacer()
+            
+            Image(systemName: "person.crop.circle.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
+                .foregroundColor(.blue)
+                .padding(.bottom, 40)
+            
+            Text("Welcome to Blossom")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.primary)
+                .padding(.bottom, 20)
+            
+            Text("Sign in to continue")
+                .font(.subheadline)
+                .foregroundColor(.secondary)
+                .padding(.bottom, 40)
+            
             NavigationLink {
                 SignInEmailView(showSignInView: $showSignInView)
             } label: {
@@ -24,11 +37,30 @@ struct AuthenticationView: View {
                     .frame(maxWidth: .infinity)
                     .background(Color.blue)
                     .cornerRadius(10)
+                    .shadow(radius: 10)
             }
+            .padding(.horizontal)
+            
             Spacer()
+            
+            HStack {
+                Text("New to Blossom?")
+                    .font(.footnote)
+                    .foregroundColor(.secondary)
+                Button(action: {
+                    // Add action for sign up
+                }) {
+                    Text("Create an account")
+                        .font(.footnote)
+                        .foregroundColor(.blue)
+                        .underline()
+                }
+            }
+            .padding(.bottom, 20)
         }
         .padding()
         .navigationTitle("Sign In")
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
@@ -39,4 +71,3 @@ struct AuthenticationView_Previews: PreviewProvider {
         }
     }
 }
-
