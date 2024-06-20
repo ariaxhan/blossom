@@ -27,94 +27,19 @@ struct SelfSoothing: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     // Visual Soothing
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "eye")
-                                .foregroundColor(.blue)
-                                .font(.title)
-                            Text("Visual Soothing")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.blue)
-                        }
-                        
-                        Text("Look at beautiful and calming images, such as nature scenes or art. Create a soothing visual environment around you.")
-                            .padding()
-                            .background(Color.blue.opacity(0.1))
-                            .cornerRadius(10)
-                    }
+                    soothingSection(icon: "eye", iconColor: Color(red: 0.6, green: 0.8, blue: 1.0), title: "Visual Soothing", description: "Look at beautiful and calming images, such as nature scenes or art. Create a soothing visual environment around you.", backgroundColor: Color(red: 0.6, green: 0.8, blue: 1.0).opacity(0.1))
                     
                     // Auditory Soothing
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "ear")
-                                .foregroundColor(.green)
-                                .font(.title)
-                            Text("Auditory Soothing")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.green)
-                        }
-                        
-                        Text("Listen to calming music, nature sounds, or white noise to help relax your mind and body.")
-                            .padding()
-                            .background(Color.green.opacity(0.1))
-                            .cornerRadius(10)
-                    }
+                    soothingSection(icon: "ear", iconColor: Color(red: 0.8, green: 1.0, blue: 0.6), title: "Auditory Soothing", description: "Listen to calming music, nature sounds, or white noise to help relax your mind and body.", backgroundColor: Color(red: 0.8, green: 1.0, blue: 0.6).opacity(0.1))
                     
                     // Olfactory Soothing
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "nose")
-                                .foregroundColor(.orange)
-                                .font(.title)
-                            Text("Olfactory Soothing")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.orange)
-                        }
-                        
-                        Text("Use soothing scents like lavender, chamomile, or sandalwood through essential oils or candles to promote relaxation.")
-                            .padding()
-                            .background(Color.orange.opacity(0.1))
-                            .cornerRadius(10)
-                    }
+                    soothingSection(icon: "nose", iconColor: Color(red: 1.0, green: 0.8, blue: 0.6), title: "Olfactory Soothing", description: "Use soothing scents like lavender, chamomile, or sandalwood through essential oils or candles to promote relaxation.", backgroundColor: Color(red: 1.0, green: 0.8, blue: 0.6).opacity(0.1))
                     
                     // Tactile Soothing
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "hand.raised")
-                                .foregroundColor(.purple)
-                                .font(.title)
-                            Text("Tactile Soothing")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.purple)
-                        }
-                        
-                        Text("Engage in activities that provide comforting touch, such as holding a soft blanket, taking a warm bath, or petting an animal.")
-                            .padding()
-                            .background(Color.purple.opacity(0.1))
-                            .cornerRadius(10)
-                    }
+                    soothingSection(icon: "hand.raised", iconColor: Color(red: 0.8, green: 0.6, blue: 1.0), title: "Tactile Soothing", description: "Engage in activities that provide comforting touch, such as holding a soft blanket, taking a warm bath, or petting an animal.", backgroundColor: Color(red: 0.8, green: 0.6, blue: 1.0).opacity(0.1))
                     
                     // Gustatory Soothing
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Image(systemName: "mouth")
-                                .foregroundColor(.red)
-                                .font(.title)
-                            Text("Gustatory Soothing")
-                                .font(.title2)
-                                .fontWeight(.bold)
-                                .foregroundColor(.red)
-                        }
-                        
-                        Text("Enjoy soothing tastes like sipping herbal tea, eating a piece of your favorite chocolate, or savoring a comforting meal.")
-                            .padding()
-                            .background(Color.red.opacity(0.1))
-                            .cornerRadius(10)
-                    }
+                    soothingSection(icon: "mouth", iconColor: Color(red: 1.0, green: 0.6, blue: 0.6), title: "Gustatory Soothing", description: "Enjoy soothing tastes like sipping herbal tea, eating a piece of your favorite chocolate, or savoring a comforting meal.", backgroundColor: Color(red: 1.0, green: 0.6, blue: 0.6).opacity(0.1))
                 }
                 .padding()
                 .background(Color.white)
@@ -123,10 +48,10 @@ struct SelfSoothing: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination: ContentView(prompt: generatePrompt())) {
+                    NavigationLink(destination: ContentView()) {
                         Text("Practice with AI")
                             .padding()
-                            .background(Color.blue)
+                            .background(Color.blue.opacity(0.8))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
@@ -136,13 +61,35 @@ struct SelfSoothing: View {
             }
         }
         .padding()
-        .background(Color(UIColor.systemGray6))
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .navigationBarTitleDisplayMode(.inline)
     }
     
-    private func generatePrompt() -> String {
-        let skillList = skills.joined(separator: ", ")
-        return "Would you like to practice a specific skill from the following: \(skillList)?"
+    private func soothingSection(icon: String, iconColor: Color, title: String, description: String, backgroundColor: Color) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack {
+                Image(systemName: icon)
+                    .foregroundColor(iconColor)
+                    .font(.title)
+                Text(title)
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+            }
+            
+            Text(description)
+                .foregroundColor(.black)
+                .padding()
+                .background(backgroundColor)
+                .cornerRadius(10)
+        }
     }
 }
 

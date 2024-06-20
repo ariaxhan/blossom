@@ -1,10 +1,3 @@
-//
-//  ProblemSolving.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
 import SwiftUI
 
 struct ProblemSolvingView: View {
@@ -14,13 +7,16 @@ struct ProblemSolvingView: View {
                 Text("Problem-Solving")
                     .font(.largeTitle)
                     .bold()
+                    .foregroundColor(.black)
                 
                 Text("The ability to solve problems efficiently and calmly.")
                     .font(.body)
+                    .foregroundColor(.black)
                 
                 Text("Skills")
                     .font(.title2)
                     .bold()
+                    .foregroundColor(.black)
                 
                 VStack(spacing: 20) {
                     
@@ -87,10 +83,17 @@ struct ProblemSolvingView: View {
             }
             .padding()
         }
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .navigationBarTitleDisplayMode(.inline)
     }
 }
-
 
 struct ProblemSolvingView_Previews: PreviewProvider {
     static var previews: some View {

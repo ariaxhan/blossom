@@ -3,7 +3,6 @@ import SwiftUI
 struct ContentView: View {
     @State private var textInput = ""
     @StateObject private var chatService = ChatService()
-    var prompt: String?
     
     var body: some View {
         VStack {
@@ -13,13 +12,10 @@ struct ContentView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(.systemBackground).ignoresSafeArea())
+        .background(Color.white.ignoresSafeArea())
         .onAppear {
             chatService.clearMessages() // Clear messages when the view appears
             chatService.fetchMessages() // Fetch new messages
-            if let prompt = prompt {
-                chatService.sendMessage(prompt)
-            }
         }
     }
     
@@ -28,10 +24,9 @@ struct ContentView: View {
             .font(.largeTitle)
             .fontWeight(.bold)
             .padding()
-            .foregroundColor(.primary)
+            .foregroundColor(.black)
             .frame(maxWidth: .infinity)
             .background(Color.blue.opacity(0.1))
-            .cornerRadius(10)
     }
     
     @ViewBuilder private func chatListView() -> some View {
@@ -42,8 +37,8 @@ struct ContentView: View {
                         .id(chatMessage.id)
                 }
             }
-            .onChange(of: chatService.messages) { oldMessages, newMessages in
-                guard let recentMessage = newMessages.last else { return }
+            .onChange(of: chatService.messages) {
+                guard let recentMessage = chatService.messages.last else { return }
                 DispatchQueue.main.async {
                     withAnimation {
                         proxy.scrollTo(recentMessage.id, anchor: .bottom)
@@ -51,22 +46,21 @@ struct ContentView: View {
                 }
             }
         }
-        .background(Color(.systemBackground))
+        .background(Color.white)
     }
     
     @ViewBuilder private func inputView() -> some View {
         HStack {
             TextField("Enter a message...", text: $textInput)
-                .padding()
-                .background(Color(.systemGray6))
-                .cornerRadius(10)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .foregroundColor(.gray)
             Button(action: sendMessage) {
                 Image(systemName: "paperplane.fill")
                     .resizable()
-                    .frame(width: 20, height: 20)
-                    .padding()
-                    .background(Color.gray)
+                    .frame(width: 15, height: 15)
                     .foregroundColor(.white)
+                    .padding()
+                    .background(Color(UIColor.white))
                     .cornerRadius(10)
             }
         }
@@ -77,7 +71,7 @@ struct ContentView: View {
         HStack {
             if chat.isUser {
                 Spacer()
-                Text(chat.text)
+                Text(chat.message)
                     .padding()
                     .background(Color.blue)
                     .cornerRadius(10)
@@ -85,7 +79,7 @@ struct ContentView: View {
                     .padding(.vertical, 4)
                     .padding(.leading, 40)
             } else {
-                Text(chat.text)
+                Text(chat.message)
                     .padding()
                     .background(Color.gray)
                     .cornerRadius(10)
@@ -95,7 +89,6 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .padding(.horizontal)
     }
     
     private func sendMessage() {
@@ -104,8 +97,6 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(prompt: "Would you like to practice a specific skill from the following: Visual Soothing, Auditory Soothing, Olfactory Soothing, Tactile Soothing, Gustatory Soothing?")
-    }
+#Preview {
+    ContentView()
 }

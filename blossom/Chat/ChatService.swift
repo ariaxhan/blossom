@@ -22,8 +22,8 @@ class ChatService: ObservableObject {
                 self.messages = documents.compactMap { snapshot -> [Chat]? in
                     do {
                         let document = try snapshot.data(as: ChatDocument.self)
-                        let prompt = Chat(id: document.id, text: document.prompt, isUser: true, state: .COMPLETED)
-                        let response = Chat(id: UUID().uuidString, text: self.processMarkdown(document.response ?? ""), isUser: false, state: document.status.chatState)
+                        let prompt = Chat(text: document.prompt, isUser: true, state: .COMPLETED)
+                        let response = Chat(text: self.processMarkdown(document.response ?? ""), isUser: false, state: document.status.chatState)
                         return [prompt, response]
                     } catch {
                         print(error.localizedDescription)
@@ -34,14 +34,13 @@ class ChatService: ObservableObject {
     }
     
     func sendMessage(_ message: String) {
-        let placeholderMessages = [Chat(id: UUID().uuidString, text: message, isUser: true, state: .COMPLETED), Chat(id: UUID().uuidString, text: "", isUser: false, state: .PENDING)]
+        let placeholderMessages = [Chat(text: message, isUser: true, state: .COMPLETED), Chat(text: "", isUser: false)]
         messages.append(contentsOf: placeholderMessages)
         db.collection(collectionPath).addDocument(data: ["prompt": message])
     }
     
     func clearMessages() {
         messages.removeAll()
-        objectWillChange.send()
     }
     
     private func processMarkdown(_ text: String) -> String {

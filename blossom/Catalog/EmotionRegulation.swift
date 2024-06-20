@@ -8,9 +8,11 @@ struct EmotionRegulation: View {
                     Text("Emotion Regulation")
                         .font(.largeTitle)
                         .bold()
+                        .foregroundColor(.black)
                     
                     Text("The ability to manage and respond to emotional experiences in a healthy and adaptive way.")
                         .font(.body)
+                        .foregroundColor(.black)
                         .padding(.horizontal)
                     
                     // Thermometer with sections
@@ -24,23 +26,23 @@ struct EmotionRegulation: View {
                                 // Section Intense
                                 NavigationLink(destination: IntenseView()) {
                                     Rectangle()
-                                        .fill(Color.red)
+                                        .fill(Color(red: 1.0, green: 0.8, blue: 0.8))
                                         .frame(height: 100)
-                                        .overlay(Text("Intense").foregroundColor(.white).bold())
+                                        .overlay(Text("Intense").foregroundColor(.black).bold())
                                 }
                                 
                                 // Section High
                                 NavigationLink(destination: HighView()) {
                                     Rectangle()
-                                        .fill(Color.orange)
+                                        .fill(Color(red: 1.0, green: 0.9, blue: 0.7))
                                         .frame(height: 100)
-                                        .overlay(Text("High").foregroundColor(.white).bold())
+                                        .overlay(Text("High").foregroundColor(.black).bold())
                                 }
                                 
                                 // Section Moderate
                                 NavigationLink(destination: ModerateView()) {
                                     Rectangle()
-                                        .fill(Color.yellow)
+                                        .fill(Color(red: 1.0, green: 1.0, blue: 0.7))
                                         .frame(height: 100)
                                         .overlay(Text("Moderate").foregroundColor(.black).bold())
                                 }
@@ -48,9 +50,9 @@ struct EmotionRegulation: View {
                                 // Section Calm
                                 NavigationLink(destination: CalmView()) {
                                     Rectangle()
-                                        .fill(Color.blue)
+                                        .fill(Color(red: 0.7, green: 0.9, blue: 1.0))
                                         .frame(height: 100)
-                                        .overlay(Text("Calm").foregroundColor(.white).bold())
+                                        .overlay(Text("Calm").foregroundColor(.black).bold())
                                 }
                             }
                             .frame(width: 100) // Set width of the thermometer
@@ -60,6 +62,14 @@ struct EmotionRegulation: View {
                 }
                 .padding()
             }
+            .background(
+                LinearGradient(
+                    gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+            )
             .navigationBarTitleDisplayMode(.inline)
         }
     }

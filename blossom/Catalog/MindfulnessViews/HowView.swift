@@ -1,10 +1,3 @@
-//
-//  HowView.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
 import SwiftUI
 
 struct HowView: View {
@@ -13,15 +6,16 @@ struct HowView: View {
     var body: some View {
         ScrollView { // Make the content scrollable if it doesn't fit on the screen
             VStack(alignment: .leading, spacing: 20) {
-
                 
                 VStack(alignment: .center, spacing: 10) {
                     Text("How Skills")
                         .font(.largeTitle).bold()
+                        .foregroundColor(.black)
                         .padding(.top, 20)
                     
                     Text("Essential for living fully and effectively by guiding how we approach our thoughts, feelings, and actions:")
                         .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
                         .padding(.horizontal)
                 }
                 .frame(maxWidth: .infinity)
@@ -32,17 +26,18 @@ struct HowView: View {
                         Image(systemName: "person.fill")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.purple)
+                            .foregroundColor(Color.purple.opacity(0.8))
                         Text("Non-Judgmental")
                             .font(.title2)
                             .bold()
-                            .foregroundColor(.purple)
+                            .foregroundColor(Color.purple.opacity(0.8))
                     }
                     Text("Observe and describe experiences without evaluating them as good or bad. Focus on the facts and consequences rather than labeling or judging.")
                         .padding()
                         .background(Color.purple.opacity(0.1))
                         .cornerRadius(10)
                         .padding(.horizontal)
+                        .foregroundColor(.black)
                 }
                 .padding(.top, 10)
                 
@@ -52,17 +47,18 @@ struct HowView: View {
                         Image(systemName: "brain.head.profile")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.orange)
+                            .foregroundColor(Color.orange.opacity(0.8))
                         Text("One Mindful")
                             .font(.title2)
                             .bold()
-                            .foregroundColor(.orange)
+                            .foregroundColor(Color.orange.opacity(0.8))
                     }
                     Text("Be fully present in the current moment, avoiding distractions from past regrets or future worries. Engage with your surroundings and activities with open awareness and curiosity.")
                         .padding()
                         .background(Color.orange.opacity(0.1))
                         .cornerRadius(10)
                         .padding(.horizontal)
+                        .foregroundColor(.black)
                 }
                 .padding(.top, 10)
                 
@@ -72,26 +68,27 @@ struct HowView: View {
                         Image(systemName: "checklist")
                             .resizable()
                             .frame(width: 40, height: 40)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue.opacity(0.8))
                         Text("Effective")
                             .font(.title2)
                             .bold()
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color.blue.opacity(0.8))
                     }
                     Text("Prioritize actions that achieve desired outcomes over proving a point. Stay flexible and adapt your approach to what works best in each situation.")
                         .padding()
                         .background(Color.blue.opacity(0.1))
                         .cornerRadius(10)
                         .padding(.horizontal)
+                        .foregroundColor(.black)
                 }
                 .padding(.top, 10)
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination:  ContentView()) {
+                    NavigationLink(destination: ContentView()) {
                         Text("Practice with AI")
                             .padding()
-                            .background(Color.black)
+                            .background(Color.pink.opacity(0.8))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
@@ -101,6 +98,14 @@ struct HowView: View {
             }
         }
         .padding()
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
     }
 }
 

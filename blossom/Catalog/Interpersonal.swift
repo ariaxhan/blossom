@@ -1,11 +1,3 @@
-//
-//  Interpersonal.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
-
 import SwiftUI
 
 struct Interpersonal: View {
@@ -15,19 +7,22 @@ struct Interpersonal: View {
                 Text("Interpersonal Effectiveness")
                     .font(.largeTitle)
                     .bold()
+                    .foregroundColor(.black)
                 
                 Text("Interpersonal effectiveness involves navigating interactions skillfully to achieve mutually beneficial outcomes and maintain positive relationships.")
                     .font(.body)
+                    .foregroundColor(.black)
                 
                 Text("Skills")
                     .font(.title2)
                     .bold()
+                    .foregroundColor(.black)
                 
                 
                 VStack(spacing: 20) {
                     
                     VStack {
-                        // Wise Mind Image with NavigationLink
+                        // Communication Image with NavigationLink
                         NavigationLink(destination: CommunicationView()) {
                             VStack {
                                 Image("communication")
@@ -41,7 +36,7 @@ struct Interpersonal: View {
                         }
                     }
                     
-                    // How Image
+                    // Relationship Building Image
                     VStack {
                         NavigationLink(destination: RelationShipBuildingView()) {
                             VStack {
@@ -56,7 +51,7 @@ struct Interpersonal: View {
                         }
                     }
                     
-                    // What Image
+                    // Conflict Resolution Image
                     VStack {
                         NavigationLink(destination: ConflictResolutionView()) {
                             VStack {
@@ -71,7 +66,7 @@ struct Interpersonal: View {
                         }
                     }
                     
-                    // What Image
+                    // Empathy Image
                     VStack {
                         NavigationLink(destination: EmpathyView()) {
                             VStack {
@@ -89,8 +84,15 @@ struct Interpersonal: View {
             }
             .padding() // Add padding around content
         }
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .navigationBarTitleDisplayMode(.inline)
-        // Add other desired modifiers like .navigationTitle
     }
 }
 

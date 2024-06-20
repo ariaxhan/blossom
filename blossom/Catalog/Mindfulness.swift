@@ -1,10 +1,3 @@
-//
-//  Mindfulness.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
 import SwiftUI
 
 struct Mindfulness: View {
@@ -14,16 +7,16 @@ struct Mindfulness: View {
                 Text("Mindfulness")
                     .font(.largeTitle)
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 
                 Text("Mindfulness is the practice of paying attention to the present moment with openness and without judgment. It involves being aware of thoughts, feelings, bodily sensations, and the environment to reduce stress and improve well-being.")
                     .font(.body)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 
                 Text("Skills")
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 
                 
                 VStack(spacing: 20) {
@@ -38,7 +31,7 @@ struct Mindfulness: View {
                                     .cornerRadius(10)
                                 Text("Wise Mind")
                                     .font(.headline)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                             }
                         }
                     }
@@ -53,7 +46,7 @@ struct Mindfulness: View {
                                     .cornerRadius(10)
                                 Text("How")
                                     .font(.headline)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                             }
                         }
                     }
@@ -68,7 +61,7 @@ struct Mindfulness: View {
                                     .cornerRadius(10)
                                 Text("What")
                                     .font(.headline)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                             }
                         }
                     }
@@ -78,14 +71,13 @@ struct Mindfulness: View {
         }
         .background(
             LinearGradient(
-                gradient: Gradient(colors: [Color(red: 0.8, green: 0.6, blue: 0.8), Color(red: 0.5, green: 0.5, blue: 0.8)]),
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
         )
         .navigationBarTitleDisplayMode(.inline)
-        // Add other desired modifiers like .navigationTitle
     }
 }
 

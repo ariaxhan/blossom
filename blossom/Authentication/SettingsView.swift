@@ -28,13 +28,13 @@ struct SettingsView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100, height: 100)
-                .foregroundColor(.blue)
+                .foregroundColor(Color(red: 0.6, green: 0.8, blue: 1.0))
                 .padding(.top, 40)
             
             Text("Settings")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.primary)
+                .foregroundColor(.white)
                 .padding(.bottom, 20)
             
             List {
@@ -50,10 +50,10 @@ struct SettingsView: View {
                 }) {
                     HStack {
                         Image(systemName: "arrow.right.square")
-                            .foregroundColor(.red)
+                            .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.6))
                         Text("Log out")
                             .font(.headline)
-                            .foregroundColor(.red)
+                            .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.6))
                     }
                 }
                 .padding()
@@ -72,10 +72,10 @@ struct SettingsView: View {
                 }) {
                     HStack {
                         Image(systemName: "key.fill")
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color(red: 0.6, green: 0.8, blue: 1.0))
                         Text("Reset password")
                             .font(.headline)
-                            .foregroundColor(.blue)
+                            .foregroundColor(Color(red: 0.6, green: 0.8, blue: 1.0))
                     }
                 }
                 .padding()

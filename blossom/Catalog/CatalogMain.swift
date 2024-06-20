@@ -26,7 +26,7 @@ struct CatalogMain: View {
                                     .cornerRadius(10)
                                 Text(title)
                                     .font(.headline)
-                                    .foregroundColor(.white)
+                                    .foregroundColor(.black)
                                     .multilineTextAlignment(.center)
                             }
                             .padding(.bottom)
@@ -37,7 +37,7 @@ struct CatalogMain: View {
             }
             .background(
                 LinearGradient(
-                    gradient: Gradient(colors: [Color(red: 0.8, green: 0.6, blue: 0.8), Color(red: 0.5, green: 0.5, blue: 0.8)]),
+                    gradient: Gradient(colors: [Color(red: 0.9, green: 0.8, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0), Color(red: 0.9, green: 0.9, blue: 1.0)]),
                     startPoint: .topLeading,
                     endPoint: .bottomTrailing
                 )
@@ -49,7 +49,7 @@ struct CatalogMain: View {
                 ToolbarItem(placement: .navigationBarLeading) {
                     NavigationLink(destination: SettingsView(showSignInView: $showSignInView)) {
                         Image(systemName: "gearshape")
-                            .foregroundColor(.white)
+                            .foregroundColor(.black)
                     }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -59,21 +59,21 @@ struct CatalogMain: View {
                             print("Search button tapped")
                         }) {
                             Image(systemName: "magnifyingglass")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                         Button(action: {
                             // Action for heart button
                             print("Favorites button tapped")
                         }) {
                             Image(systemName: "heart")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                         Button(action: {
                             // Action for menu button
                             print("Menu button tapped")
                         }) {
                             Image(systemName: "line.3.horizontal")
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                         }
                     }
                 }
@@ -81,7 +81,7 @@ struct CatalogMain: View {
             .fullScreenCover(isPresented: $showSignInView) {
                 SignInEmailView(showSignInView: $showSignInView)
             }
-            .navigationBarColor(backgroundColor: UIColor.clear, titleColor: UIColor.white)
+            .navigationBarColor(backgroundColor: UIColor.clear, titleColor: UIColor.black)
         }
     }
 }
@@ -89,5 +89,36 @@ struct CatalogMain: View {
 struct CatalogMain_Previews: PreviewProvider {
     static var previews: some View {
         CatalogMain()
+    }
+}
+
+struct NavigationBarModifier: ViewModifier {
+    var backgroundColor: UIColor?
+    var titleColor: UIColor?
+    
+    init(backgroundColor: UIColor?, titleColor: UIColor?) {
+        self.backgroundColor = backgroundColor
+        self.titleColor = titleColor
+        let coloredAppearance = UINavigationBarAppearance()
+        coloredAppearance.configureWithTransparentBackground()
+        coloredAppearance.backgroundColor = backgroundColor
+        coloredAppearance.largeTitleTextAttributes = [.foregroundColor: titleColor ?? .black]
+        coloredAppearance.titleTextAttributes = [.foregroundColor: titleColor ?? .black]
+        
+        UINavigationBar.appearance().standardAppearance = coloredAppearance
+        UINavigationBar.appearance().compactAppearance = coloredAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = coloredAppearance
+        UINavigationBar.appearance().tintColor = titleColor
+    }
+    
+    func body(content: Content) -> some View {
+        content
+            .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+extension View {
+    func navigationBarColor(backgroundColor: UIColor?, titleColor: UIColor?) -> some View {
+        self.modifier(NavigationBarModifier(backgroundColor: backgroundColor, titleColor: titleColor))
     }
 }
