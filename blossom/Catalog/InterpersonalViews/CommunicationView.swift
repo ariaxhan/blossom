@@ -1,26 +1,21 @@
-//
-//  DearManView.swift
-//  blossom
-//
-//  Created by Aria Han on 6/17/24.
-//
-
 import SwiftUI
 
 struct CommunicationView: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        ScrollView { // Make the content scrollable if it doesn't fit on the screen
+        ScrollView {
             VStack(alignment: .center, spacing: 20) {
                 
                 VStack(alignment: .center, spacing: 10) {
                     Text("Communication")
                         .font(.largeTitle).bold()
+                        .foregroundColor(.black)
                         .padding(.top, 20)
                     
                     Text("A structured approach for effective communication to get your needs met while maintaining healthy relationships.")
                         .multilineTextAlignment(.center)
+                        .foregroundColor(.black)
                         .padding(.horizontal)
                 }
                 .frame(maxWidth: .infinity)
@@ -28,18 +23,87 @@ struct CommunicationView: View {
                 VStack(alignment: .center, spacing: 15) {
                     Text("DEAR MAN")
                         .font(.title2).bold()
+                        .foregroundColor(.black)
                         .padding(.top, 20)
-        
                     
-                    AcronymView(acronym: ["D", "E", "A", "R", "M", "A", "N"], meanings: [
-                        "Describe: Clearly and factually describe the situation or issue. Avoid judgmental language.",
-                        "Express: Express your feelings and thoughts about the situation. Use 'I' statements.",
-                        "Assert: Assert your needs or requests directly and clearly. Be concise and specific.",
-                        "Reinforce: Reinforce the benefits of getting what you want or the positive outcomes. Explain why it's important.",
-                        "Mindful: Stay focused on your goals. Avoid distractions and maintain your position.",
-                        "Appear Confident: Use a confident tone and body language. Maintain eye contact and speak firmly.",
-                        "Negotiate: Be willing to give to get. Offer alternative solutions and be open to compromise."
-                    ])
+                    VStack(alignment: .leading, spacing: 10) {
+                        HStack(alignment: .top) {
+                            Text("D:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Describe: Clearly and factually describe the situation or issue. Avoid judgmental language.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("E:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Express: Express your feelings and thoughts about the situation. Use 'I' statements.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("A:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Assert: Assert your needs or requests directly and clearly. Be concise and specific.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("R:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Reinforce: Reinforce the benefits of getting what you want or the positive outcomes. Explain why it's important.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("M:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Mindful: Stay focused on your goals. Avoid distractions and maintain your position.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("A:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Appear Confident: Use a confident tone and body language. Maintain eye contact and speak firmly.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                        
+                        HStack(alignment: .top) {
+                            Text("N:")
+                                .font(.headline)
+                                .bold()
+                                .frame(width: 30, alignment: .leading)
+                                .foregroundColor(.black)
+                            Text("Negotiate: Be willing to give to get. Offer alternative solutions and be open to compromise.")
+                                .font(.body)
+                                .foregroundColor(.black)
+                        }
+                    }
                     .padding()
                     .background(Color.green.opacity(0.1))
                     .cornerRadius(10)
@@ -49,10 +113,10 @@ struct CommunicationView: View {
                 
                 VStack {
                     Spacer()
-                    NavigationLink(destination:  ContentView()) {
+                    NavigationLink(destination: ContentView()) {
                         Text("Practice with AI")
                             .padding()
-                            .background(Color.black)
+                            .background(Color.pink.opacity(0.8))
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
@@ -60,28 +124,16 @@ struct CommunicationView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .padding()
         }
-        .padding()
-    }
-}
-
-struct AcronymView: View {
-    let acronym: [String]
-    let meanings: [String]
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            ForEach(0..<acronym.count, id: \.self) { index in
-                HStack(alignment: .top) {
-                    Text("\(acronym[index]):")
-                        .font(.headline)
-                        .bold()
-                        .frame(width: 30, alignment: .leading)
-                    Text(meanings[index])
-                        .font(.body)
-                }
-            }
-        }
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
     }
 }
 

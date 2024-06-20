@@ -38,7 +38,7 @@ struct Interpersonal: View {
                     
                     // Relationship Building Image
                     VStack {
-                        NavigationLink(destination: RelationShipBuildingView()) {
+                        NavigationLink(destination: RelationshipBuildingView()) {
                             VStack {
                                 Image("relationshipbuilding")
                                     .resizable()
