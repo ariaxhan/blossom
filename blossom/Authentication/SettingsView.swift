@@ -34,10 +34,10 @@ struct SettingsView: View {
             Text("Settings")
                 .font(.largeTitle)
                 .fontWeight(.bold)
-                .foregroundColor(.white)
+                .foregroundColor(.black)
                 .padding(.bottom, 20)
             
-            List {
+            VStack(spacing: 15) {
                 Button(action: {
                     Task {
                         do {
@@ -50,14 +50,15 @@ struct SettingsView: View {
                 }) {
                     HStack {
                         Image(systemName: "arrow.right.square")
-                            .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.6))
+                            .foregroundColor(.white)
                         Text("Log out")
                             .font(.headline)
-                            .foregroundColor(Color(red: 1.0, green: 0.6, blue: 0.6))
+                            .foregroundColor(.white)
                     }
                 }
                 .padding()
-                .background(Color.red.opacity(0.1))
+                .frame(maxWidth: .infinity)
+                .background(Color.red)
                 .cornerRadius(10)
                 
                 Button(action: {
@@ -72,17 +73,18 @@ struct SettingsView: View {
                 }) {
                     HStack {
                         Image(systemName: "key.fill")
-                            .foregroundColor(Color(red: 0.6, green: 0.8, blue: 1.0))
+                            .foregroundColor(.white)
                         Text("Reset password")
                             .font(.headline)
-                            .foregroundColor(Color(red: 0.6, green: 0.8, blue: 1.0))
+                            .foregroundColor(.white)
                     }
                 }
                 .padding()
-                .background(Color.blue.opacity(0.1))
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
                 .cornerRadius(10)
             }
-            .listStyle(InsetGroupedListStyle())
+            .padding(.horizontal, 20)
             
             Spacer()
         }

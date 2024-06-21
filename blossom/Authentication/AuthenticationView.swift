@@ -59,6 +59,14 @@ struct AuthenticationView: View {
             .padding(.bottom, 20)
         }
         .padding()
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .navigationTitle("Sign In")
         .navigationBarTitleDisplayMode(.inline)
     }

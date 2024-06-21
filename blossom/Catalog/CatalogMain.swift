@@ -52,31 +52,6 @@ struct CatalogMain: View {
                             .foregroundColor(.black)
                     }
                 }
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack {
-                        Button(action: {
-                            // Action for search button
-                            print("Search button tapped")
-                        }) {
-                            Image(systemName: "magnifyingglass")
-                                .foregroundColor(.black)
-                        }
-                        Button(action: {
-                            // Action for heart button
-                            print("Favorites button tapped")
-                        }) {
-                            Image(systemName: "heart")
-                                .foregroundColor(.black)
-                        }
-                        Button(action: {
-                            // Action for menu button
-                            print("Menu button tapped")
-                        }) {
-                            Image(systemName: "line.3.horizontal")
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
             }
             .fullScreenCover(isPresented: $showSignInView) {
                 SignInEmailView(showSignInView: $showSignInView)
