@@ -35,7 +35,7 @@ struct IntenseView: View {
                         
                         Text("Activities, Contributing, Comparisons, Emotions, Pushing away, Thoughts, Sensations. Engage in activities or thoughts to temporarily distract yourself from the distress.")
                             .padding()
-                            .background(Color.red.opacity(0.1))
+                        
                             .cornerRadius(10)
                     }
                     
@@ -53,7 +53,7 @@ struct IntenseView: View {
                         
                         Text("Imagery, Meaning, Prayer, Relaxation, One thing in the moment, Vacation, Encouragement. Use techniques to improve your current moment and find some relief.")
                             .padding()
-                            .background(Color.red.opacity(0.1))
+                        
                             .cornerRadius(10)
                     }
                     
@@ -71,12 +71,11 @@ struct IntenseView: View {
                         
                         Text("Evaluate the pros and cons of tolerating distress versus acting on impulse. Weighing the outcomes can help in making better decisions during distressing times.")
                             .padding()
-                            .background(Color.red.opacity(0.1))
+                        
                             .cornerRadius(10)
                     }
                 }
                 .padding()
-                .background(Color.white)
                 .cornerRadius(15)
                 .padding(.horizontal)
                 

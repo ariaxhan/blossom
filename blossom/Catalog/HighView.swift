@@ -96,7 +96,6 @@ struct HighView: View {
                     .padding(.horizontal)
                 }
                 .padding()
-                .background(Color.orange.opacity(0.3))
                 .cornerRadius(10)
                 .padding(.horizontal)
                 

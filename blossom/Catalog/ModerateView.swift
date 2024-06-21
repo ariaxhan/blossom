@@ -96,7 +96,7 @@ struct ModerateView: View {
                     .padding(.horizontal)
                 }
                 .padding()
-                .background(Color.yellow.opacity(0.3))
+    
                 .cornerRadius(10)
                 .padding(.horizontal)
                 

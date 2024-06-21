@@ -96,7 +96,6 @@ struct CalmView: View {
                     .padding(.horizontal)
                 }
                 .padding()
-                .background(Color.blue.opacity(0.1))
                 .cornerRadius(10)
                 .padding(.horizontal)
                 
