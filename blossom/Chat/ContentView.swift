@@ -12,7 +12,14 @@ struct ContentView: View {
         }
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.white.ignoresSafeArea())
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .onAppear {
             chatService.clearMessages() // Clear messages when the view appears
             chatService.fetchMessages() // Fetch new messages
@@ -26,7 +33,6 @@ struct ContentView: View {
             .padding()
             .foregroundColor(.black)
             .frame(maxWidth: .infinity)
-            .background(Color.blue.opacity(0.1))
     }
     
     @ViewBuilder private func chatListView() -> some View {
@@ -46,7 +52,6 @@ struct ContentView: View {
                 }
             }
         }
-        .background(Color.white)
     }
     
     @ViewBuilder private func inputView() -> some View {
@@ -54,13 +59,14 @@ struct ContentView: View {
             TextField("Enter a message...", text: $textInput)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .foregroundColor(.gray)
+                .frame(height: 25)
             Button(action: sendMessage) {
                 Image(systemName: "paperplane.fill")
                     .resizable()
                     .frame(width: 15, height: 15)
                     .foregroundColor(.white)
                     .padding()
-                    .background(Color(UIColor.white))
+                    .background(Color(UIColor.gray))
                     .cornerRadius(10)
             }
         }

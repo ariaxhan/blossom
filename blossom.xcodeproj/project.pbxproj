@@ -31,7 +31,6 @@
 		15DD84FB2C20070D0085ACE6 /* blossomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD84FA2C20070D0085ACE6 /* blossomTests.swift */; };
 		15DD85052C20070D0085ACE6 /* blossomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85042C20070D0085ACE6 /* blossomUITests.swift */; };
 		15DD85072C20070D0085ACE6 /* blossomUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DD85062C20070D0085ACE6 /* blossomUITestsLaunchTests.swift */; };
-		15DD85142C20071D0085ACE6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 15DD85132C20071D0085ACE6 /* GoogleService-Info.plist */; };
 		15DD85172C2007830085ACE6 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD85162C2007830085ACE6 /* FirebaseAnalytics */; };
 		15DD85192C2007830085ACE6 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD85182C2007830085ACE6 /* FirebaseAnalyticsSwift */; };
 		15DD851B2C2007830085ACE6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD851A2C2007830085ACE6 /* FirebaseAuth */; };
@@ -58,6 +57,8 @@
 		15DD854C2C20E5A40085ACE6 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD854B2C20E5A40085ACE6 /* FirebaseMessaging */; };
 		15DD854E2C20E61D0085ACE6 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD854D2C20E61D0085ACE6 /* FirebaseFunctions */; };
 		15DD85522C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD85512C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta */; };
+		318FD2382C256961001B2817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 318FD2372C256961001B2817 /* GoogleService-Info.plist */; };
+		318FD23B2C256A17001B2817 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 318FD23A2C256A17001B2817 /* GoogleMobileAds */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,7 +105,6 @@
 		15DD85002C20070D0085ACE6 /* blossomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = blossomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DD85042C20070D0085ACE6 /* blossomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blossomUITests.swift; sourceTree = "<group>"; };
 		15DD85062C20070D0085ACE6 /* blossomUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blossomUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		15DD85132C20071D0085ACE6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		15DD851F2C2008960085ACE6 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		15DD85212C2009BD0085ACE6 /* SignInEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEmailView.swift; sourceTree = "<group>"; };
 		15DD85232C200B6C0085ACE6 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
@@ -120,6 +120,7 @@
 		15DD85392C20D5810085ACE6 /* WiseMindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiseMindView.swift; sourceTree = "<group>"; };
 		15DD853B2C20D5890085ACE6 /* HowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowView.swift; sourceTree = "<group>"; };
 		15DD853D2C20D5920085ACE6 /* WhatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatView.swift; sourceTree = "<group>"; };
+		318FD2372C256961001B2817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +133,7 @@
 				15DD85192C2007830085ACE6 /* FirebaseAnalyticsSwift in Frameworks */,
 				15DD854A2C20E5A40085ACE6 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				15DD851B2C2007830085ACE6 /* FirebaseAuth in Frameworks */,
+				318FD23B2C256A17001B2817 /* GoogleMobileAds in Frameworks */,
 				15DD85482C20E5200085ACE6 /* FirebaseFirestoreSwift in Frameworks */,
 				15DD85522C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				15DD851D2C2007830085ACE6 /* FirebaseDatabase in Frameworks */,
@@ -209,7 +211,7 @@
 				15DD85292C20CCFE0085ACE6 /* Catalog */,
 				15DD851E2C20086D0085ACE6 /* Authentication */,
 				15DD84E92C20070B0085ACE6 /* blossomApp.swift */,
-				15DD85132C20071D0085ACE6 /* GoogleService-Info.plist */,
+				318FD2372C256961001B2817 /* GoogleService-Info.plist */,
 				15DD84ED2C20070D0085ACE6 /* Assets.xcassets */,
 				15DD84EF2C20070D0085ACE6 /* Preview Content */,
 			);
@@ -332,6 +334,7 @@
 				15DD854D2C20E61D0085ACE6 /* FirebaseFunctions */,
 				15DD85512C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta */,
 				15464DA82C239C3E00209273 /* SwiftyMarkdown */,
+				318FD23A2C256A17001B2817 /* GoogleMobileAds */,
 			);
 			productName = blossom;
 			productReference = 15DD84E62C20070B0085ACE6 /* blossom.app */;
@@ -408,6 +411,7 @@
 			packageReferences = (
 				15DD85152C2007830085ACE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				15464DA72C239C1E00209273 /* XCRemoteSwiftPackageReference "SwiftyMarkdown" */,
+				318FD2392C256A17001B2817 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 15DD84E72C20070B0085ACE6 /* Products */;
 			projectDirPath = "";
@@ -427,7 +431,7 @@
 			files = (
 				15DD84F12C20070D0085ACE6 /* Preview Assets.xcassets in Resources */,
 				15DD84EE2C20070D0085ACE6 /* Assets.xcassets in Resources */,
-				15DD85142C20071D0085ACE6 /* GoogleService-Info.plist in Resources */,
+				318FD2382C256961001B2817 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,6 +836,14 @@
 				minimumVersion = 10.27.0;
 			};
 		};
+		318FD2392C256A17001B2817 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.6.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -894,6 +906,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 15DD85152C2007830085ACE6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseInAppMessaging-Beta";
+		};
+		318FD23A2C256A17001B2817 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 318FD2392C256A17001B2817 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
