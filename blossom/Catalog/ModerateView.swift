@@ -96,7 +96,7 @@ struct ModerateView: View {
                     .padding(.horizontal)
                 }
                 .padding()
-                .background(Color.yellow.opacity(0.1))
+                .background(Color.yellow.opacity(0.3))
                 .cornerRadius(10)
                 .padding(.horizontal)
                 
@@ -115,6 +115,14 @@ struct ModerateView: View {
             }
         }
         .padding()
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color(red: 0.95, green: 0.9, blue: 1.0), Color(red: 0.8, green: 0.9, blue: 1.0)]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+        )
         .navigationBarTitleDisplayMode(.inline)
     }
 }
