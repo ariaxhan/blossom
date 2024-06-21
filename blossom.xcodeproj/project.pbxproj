@@ -59,6 +59,10 @@
 		15DD85522C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 15DD85512C20ECC90085ACE6 /* FirebaseInAppMessaging-Beta */; };
 		318FD2382C256961001B2817 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 318FD2372C256961001B2817 /* GoogleService-Info.plist */; };
 		318FD23B2C256A17001B2817 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 318FD23A2C256A17001B2817 /* GoogleMobileAds */; };
+		318FD23E2C25744C001B2817 /* PurposeAndGoalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FD23D2C25744B001B2817 /* PurposeAndGoalsView.swift */; };
+		318FD2402C257459001B2817 /* ExistentialAnxietyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FD23F2C257459001B2817 /* ExistentialAnxietyView.swift */; };
+		318FD2422C257464001B2817 /* ValuesBasedDecisionMakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FD2412C257464001B2817 /* ValuesBasedDecisionMakingView.swift */; };
+		318FD2442C25746D001B2817 /* PersonalAccView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318FD2432C25746D001B2817 /* PersonalAccView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +125,10 @@
 		15DD853B2C20D5890085ACE6 /* HowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowView.swift; sourceTree = "<group>"; };
 		15DD853D2C20D5920085ACE6 /* WhatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatView.swift; sourceTree = "<group>"; };
 		318FD2372C256961001B2817 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		318FD23D2C25744B001B2817 /* PurposeAndGoalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurposeAndGoalsView.swift; sourceTree = "<group>"; };
+		318FD23F2C257459001B2817 /* ExistentialAnxietyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistentialAnxietyView.swift; sourceTree = "<group>"; };
+		318FD2412C257464001B2817 /* ValuesBasedDecisionMakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValuesBasedDecisionMakingView.swift; sourceTree = "<group>"; };
+		318FD2432C25746D001B2817 /* PersonalAccView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalAccView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +266,7 @@
 		15DD85292C20CCFE0085ACE6 /* Catalog */ = {
 			isa = PBXGroup;
 			children = (
+				318FD23C2C257438001B2817 /* ExistentialViews */,
 				15464DB42C23A41300209273 /* ProblemSolvingViews */,
 				15464DAB2C239EAD00209273 /* IntenseView.swift */,
 				15464DAF2C239F7F00209273 /* ModerateView.swift */,
@@ -303,6 +312,17 @@
 				15464DA52C23925900209273 /* ChatService.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		318FD23C2C257438001B2817 /* ExistentialViews */ = {
+			isa = PBXGroup;
+			children = (
+				318FD23D2C25744B001B2817 /* PurposeAndGoalsView.swift */,
+				318FD23F2C257459001B2817 /* ExistentialAnxietyView.swift */,
+				318FD2412C257464001B2817 /* ValuesBasedDecisionMakingView.swift */,
+				318FD2432C25746D001B2817 /* PersonalAccView.swift */,
+			);
+			path = ExistentialViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,8 +480,11 @@
 				15464D922C22ACC100209273 /* RelationShipBuildingView.swift in Sources */,
 				15464DB22C239F9300209273 /* CalmView.swift in Sources */,
 				15DD853C2C20D5890085ACE6 /* HowView.swift in Sources */,
+				318FD2442C25746D001B2817 /* PersonalAccView.swift in Sources */,
 				15DD84EC2C20070B0085ACE6 /* ContentView.swift in Sources */,
+				318FD2422C257464001B2817 /* ValuesBasedDecisionMakingView.swift in Sources */,
 				15DD84EA2C20070B0085ACE6 /* blossomApp.swift in Sources */,
+				318FD2402C257459001B2817 /* ExistentialAnxietyView.swift in Sources */,
 				15464D902C22ACB400209273 /* CommunicationView.swift in Sources */,
 				15464DA22C23924000209273 /* ChatBubble.swift in Sources */,
 				15464DAC2C239EAD00209273 /* IntenseView.swift in Sources */,
@@ -484,6 +507,7 @@
 				15DD853A2C20D5810085ACE6 /* WiseMindView.swift in Sources */,
 				15DD85312C20D3710085ACE6 /* EmotionRegulation.swift in Sources */,
 				15DD85202C2008960085ACE6 /* AuthenticationView.swift in Sources */,
+				318FD23E2C25744C001B2817 /* PurposeAndGoalsView.swift in Sources */,
 				15DD85242C200B6C0085ACE6 /* AuthenticationManager.swift in Sources */,
 				15DD85222C2009BD0085ACE6 /* SignInEmailView.swift in Sources */,
 				15DD853E2C20D5920085ACE6 /* WhatView.swift in Sources */,

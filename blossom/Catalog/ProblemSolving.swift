@@ -3,7 +3,7 @@ import SwiftUI
 struct ProblemSolvingView: View {
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .center, spacing: 20) {
                 Text("Problem-Solving")
                     .font(.largeTitle)
                     .bold()

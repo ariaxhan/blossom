@@ -27,19 +27,19 @@ struct SelfSoothing: View {
                 
                 VStack(alignment: .leading, spacing: 15) {
                     // Visual Soothing
-                    soothingSection(icon: "eye", iconColor: Color(red: 0.6, green: 0.8, blue: 1.0), title: "Visual Soothing", description: "Look at beautiful and calming images, such as nature scenes or art. Create a soothing visual environment around you.", backgroundColor: Color(red: 0.6, green: 0.8, blue: 1.0).opacity(0.1))
+                    soothingSection(icon: "eye", iconColor: Color(red: 0.6, green: 0.8, blue: 1.0), title: "Visual Soothing", description: "Look at beautiful and calming images, such as nature scenes or art. Create a soothing visual environment around you.", backgroundColor: Color(red: 0.6, green: 0.8, blue: 1.0).opacity(0.3))
                     
                     // Auditory Soothing
-                    soothingSection(icon: "ear", iconColor: Color(red: 0.8, green: 1.0, blue: 0.6), title: "Auditory Soothing", description: "Listen to calming music, nature sounds, or white noise to help relax your mind and body.", backgroundColor: Color(red: 0.8, green: 1.0, blue: 0.6).opacity(0.1))
+                    soothingSection(icon: "ear", iconColor: Color(red: 0.8, green: 1.0, blue: 0.6), title: "Auditory Soothing", description: "Listen to calming music, nature sounds, or white noise to help relax your mind and body.", backgroundColor: Color(red: 0.8, green: 1.0, blue: 0.6).opacity(0.3))
                     
                     // Olfactory Soothing
-                    soothingSection(icon: "nose", iconColor: Color(red: 1.0, green: 0.8, blue: 0.6), title: "Olfactory Soothing", description: "Use soothing scents like lavender, chamomile, or sandalwood through essential oils or candles to promote relaxation.", backgroundColor: Color(red: 1.0, green: 0.8, blue: 0.6).opacity(0.1))
+                    soothingSection(icon: "nose", iconColor: Color(red: 1.0, green: 0.8, blue: 0.6), title: "Olfactory Soothing", description: "Use soothing scents like lavender, chamomile, or sandalwood through essential oils or candles to promote relaxation.", backgroundColor: Color(red: 1.0, green: 0.8, blue: 0.6).opacity(0.3))
                     
                     // Tactile Soothing
-                    soothingSection(icon: "hand.raised", iconColor: Color(red: 0.8, green: 0.6, blue: 1.0), title: "Tactile Soothing", description: "Engage in activities that provide comforting touch, such as holding a soft blanket, taking a warm bath, or petting an animal.", backgroundColor: Color(red: 0.8, green: 0.6, blue: 1.0).opacity(0.1))
+                    soothingSection(icon: "hand.raised", iconColor: Color(red: 0.8, green: 0.6, blue: 1.0), title: "Tactile Soothing", description: "Engage in activities that provide comforting touch, such as holding a soft blanket, taking a warm bath, or petting an animal.", backgroundColor: Color(red: 0.8, green: 0.6, blue: 1.0).opacity(0.3))
                     
                     // Gustatory Soothing
-                    soothingSection(icon: "mouth", iconColor: Color(red: 1.0, green: 0.6, blue: 0.6), title: "Gustatory Soothing", description: "Enjoy soothing tastes like sipping herbal tea, eating a piece of your favorite chocolate, or savoring a comforting meal.", backgroundColor: Color(red: 1.0, green: 0.6, blue: 0.6).opacity(0.1))
+                    soothingSection(icon: "mouth", iconColor: Color(red: 1.0, green: 0.6, blue: 0.6), title: "Gustatory Soothing", description: "Enjoy soothing tastes like sipping herbal tea, eating a piece of your favorite chocolate, or savoring a comforting meal.", backgroundColor: Color(red: 1.0, green: 0.6, blue: 0.6).opacity(0.3))
                 }
                 .padding()
                 .background(Color.white)
