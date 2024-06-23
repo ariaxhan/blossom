@@ -114,6 +114,16 @@ struct WiseMindView: View {
                     
                     VStack {
                         Spacer()
+                        
+                        NavigationLink(destination: WorksheetView()) {
+                            Text("Practice Worksheet")
+                                .padding()
+                                .background(Color.blue.opacity(0.8))
+                                .foregroundColor(.white)
+                                .cornerRadius(10)
+                        }
+                        .padding(.bottom, 10)
+                        
                         NavigationLink(destination: ContentView()) {
                             Text("Practice with AI")
                                 .padding()
