@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct WorksheetView: View {
-    @StateObject private var viewModel = WorksheetViewModel()
+    @ObservedObject var viewModel: WorksheetViewModel
     @State private var currentQuestionIndex = 0
     @State private var userResponses: [String] = []
     @State private var showAlert = false
@@ -25,9 +25,6 @@ struct WorksheetView: View {
                 }
             } else {
                 LoadingView()
-                    .onAppear {
-                        viewModel.fetchWorksheets()
-                    }
             }
         }
         .background(
@@ -165,6 +162,6 @@ struct WorksheetContentView: View {
 
 struct WorksheetView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetView(title: "wise_mind")
+        WorksheetView( viewModel: WorksheetViewModel(), title: "wise_mind")
     }
 }

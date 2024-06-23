@@ -12,21 +12,34 @@ import FirebaseFirestoreSwift
 class WorksheetViewModel: ObservableObject {
     @Published var worksheets = [Worksheet]()
     private var db = Firestore.firestore()
+    private var didFetch = false
 
     init() {
         fetchWorksheets()
     }
 
     func fetchWorksheets() {
+        guard !didFetch else { return }
+        didFetch = true
+        
+        print("Fetching worksheets...")
         db.collection("worksheets").addSnapshotListener { (querySnapshot, error) in
+            if let error = error {
+                print("Error fetching documents: \(error.localizedDescription)")
+                return
+            }
+
             guard let documents = querySnapshot?.documents else {
-                print("No documents")
+                print("No documents found")
                 return
             }
 
             self.worksheets = documents.compactMap { queryDocumentSnapshot -> Worksheet? in
+                print("Processing document: \(queryDocumentSnapshot.documentID)")
                 return try? queryDocumentSnapshot.data(as: Worksheet.self)
             }
+
+            print("Fetched \(self.worksheets.count) worksheets")
         }
     }
 
