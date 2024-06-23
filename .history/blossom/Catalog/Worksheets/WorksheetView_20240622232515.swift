@@ -6,28 +6,23 @@ struct WorksheetView: View {
     @State private var userResponses: [String] = []
     @State private var showAlert = false
     @State private var alertMessage = ""
-    
-    var title: String
 
     var body: some View {
         VStack {
-            if let worksheet = viewModel.worksheets.first(where: { $0.title == title }) {
+            if viewModel.worksheets.isEmpty {
+                LoadingView()
+                    .onAppear {
+                        viewModel.fetchWorksheets()
+                    }
+            } else {
                 WorksheetContentView(
-                    worksheet: worksheet,
+                    worksheet: viewModel.worksheets.first!,
                     currentQuestionIndex: $currentQuestionIndex,
                     userResponses: $userResponses,
                     showAlert: $showAlert,
                     alertMessage: $alertMessage,
                     saveResponses: viewModel.saveResponses
                 )
-                .onAppear {
-                    initializeUserResponses(for: worksheet)
-                }
-            } else {
-                LoadingView()
-                    .onAppear {
-                        viewModel.fetchWorksheets()
-                    }
             }
         }
         .background(
@@ -38,13 +33,6 @@ struct WorksheetView: View {
             )
             .ignoresSafeArea()
         )
-    }
-
-    private func initializeUserResponses(for worksheet: Worksheet) {
-        let questionsCount = worksheet.questions.count
-        if userResponses.count != questionsCount {
-            userResponses = Array(repeating: "", count: questionsCount)
-        }
     }
 }
 
@@ -66,6 +54,13 @@ struct WorksheetContentView: View {
         let questions = worksheet.questions
         
         VStack {
+            if userResponses.count != questions.count {
+                // fix error type () cannot conform to view
+                DispatchQueue.main.async {
+                    userResponses = Array(repeating: "", count: questions.count)
+                }
+            }
+            
             Text(worksheet.title)
                 .font(.largeTitle)
                 .foregroundColor(.white)
@@ -165,6 +160,6 @@ struct WorksheetContentView: View {
 
 struct WorksheetView_Previews: PreviewProvider {
     static var previews: some View {
-        WorksheetView(title: "wise_mind")
+        WorksheetView()
     }
 }

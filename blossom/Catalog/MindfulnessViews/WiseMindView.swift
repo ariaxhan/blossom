@@ -2,7 +2,7 @@ import SwiftUI
 
 struct WiseMindView: View {
     @Environment(\.presentationMode) var presentationMode
-
+    @StateObject private var viewModel = WorksheetViewModel()
     var body: some View {
         ScrollView { // Make the content scrollable if it doesn't fit on the screen
             VStack(alignment: .leading, spacing: 20) {
@@ -115,13 +115,13 @@ struct WiseMindView: View {
                     VStack {
                         Spacer()
                         
-                        NavigationLink(destination: WorksheetView()) {
-                            Text("Practice Worksheet")
-                                .padding()
-                                .background(Color.blue.opacity(0.8))
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
+                        NavigationLink(destination: WorksheetView(title: "wise_mind")) {
+                                            Text("Practice Worksheet")
+                                                .padding()
+                                                .background(Color.blue.opacity(0.8))
+                                                .foregroundColor(.white)
+                                                .cornerRadius(10)
+                                        }
                         .padding(.bottom, 10)
                         
                         NavigationLink(destination: ContentView()) {
@@ -146,6 +146,9 @@ struct WiseMindView: View {
             )
             .ignoresSafeArea()
         )
+        .onAppear {
+                        viewModel.fetchWorksheets()
+                    }
     }
 }
 

@@ -11,10 +11,8 @@ import FirebaseFirestoreSwift
 struct Worksheet: Identifiable, Codable {
     @DocumentID var id: String?
     var title: String
-    var questions: [Question]
-    var timestamp: Date?
+    var questions: [String]
 }
-
 struct Question: Identifiable, Codable {
     var id: String
     var text: String
